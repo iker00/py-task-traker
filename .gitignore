@@ -1,0 +1,29 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Virtual environment files
+venv/
+env/
+*.venv/
+*.env/
+
+# PyCharm configuration files
+.idea/
+
+# Log files
+*.log
+
+# Database files
+*.sqlite3
+
+# Build and distribution files
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.bak
+*.swp
+*.tmp
+*.swp
