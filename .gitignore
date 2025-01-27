@@ -27,3 +27,5 @@ dist/
 *.swp
 *.tmp
 *.swp
+
+tasks.json
