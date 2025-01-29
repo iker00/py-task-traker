@@ -1,5 +1,4 @@
 import sys
-from task import Task
 from task_manager import TaskManager
 
 
@@ -14,24 +13,20 @@ def main():
     try:
         match arg:
             case "add":
-                description = sys.argv[2] if len(sys.argv) > 2 else False
-                task_id = tm.add_task(description=description)
-                print(f"Task added successfully (ID: {task_id})")
+                tm.add_task(description=get_arg(2))
             case "update":
-                pass
+                tm.update_task(task_id=get_arg(2), description=get_arg(3))
             case "list":
-                pass
+                tm.list_tasks()
             case "delete":
-                pass
+                tm.delete_task(task_id=get_arg(2))
             case _:
                 print("Invalid arg")
-    except ValueError as exception:
+    except (ValueError, KeyError) as exception:
         print(exception)
 
-
-def add_task(description: str):
-    task = Task(task_id="1", description=description)
-    return task.id
+def get_arg(arg_index: int):
+    return sys.argv[arg_index] if len(sys.argv) > arg_index else False
 
 
 if __name__ == "__main__":
