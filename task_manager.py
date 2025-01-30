@@ -12,7 +12,12 @@ class TaskManager:
 
         self.task_list = self._load_tasks()
 
-    def _initialize_file(self):
+    def _initialize_file(self) -> None:
+        """
+        Initializes an empty file by creating a new JSON file with the name specified in `self.file_name`
+
+        :rtype: None
+        """
         initial_data = {"tasks": []}
         with open(self.file_name, 'w', encoding='UTF-8') as file:
             json.dump(initial_data, file, indent=4)
